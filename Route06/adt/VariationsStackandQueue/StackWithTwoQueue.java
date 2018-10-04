@@ -9,19 +9,19 @@ import adt.stack.StackUnderflowException;
 
 public class StackWithTwoQueue<T> implements Stack<T> {
 
-	QueueDoubleLinkedListImpl<T> fila;
+	QueueDoubleLinkedListImpl<T> queue;
 	QueueDoubleLinkedListImpl<T> aux;
 	
 	public static void main(String[] args) throws StackOverflowException, StackUnderflowException {
-		StackWithTwoQueue<Integer> pilha = new StackWithTwoQueue<Integer>(5);
+		StackWithTwoQueue<Integer> stack = new StackWithTwoQueue<Integer>(5);
 
-		System.out.println(pilha.top());
+		System.out.println(stack.top());
 
 	}
 
 	public StackWithTwoQueue(int size) {
 
-		this.fila = new QueueDoubleLinkedListImpl<T>(size);
+		this.queue = new QueueDoubleLinkedListImpl<T>(size);
 		this.aux = new QueueDoubleLinkedListImpl<T>(size);
 		
 
@@ -31,12 +31,12 @@ public class StackWithTwoQueue<T> implements Stack<T> {
 	public void push(T element) throws StackOverflowException {
 		if (!isFull()) {
 			try {
-				while (!fila.isEmpty()) {
-					aux.enqueue(fila.dequeue());
+				while (!queue.isEmpty()) {
+					aux.enqueue(queue.dequeue());
 				}
-				fila.enqueue(element);
+				queue.enqueue(element);
 				while (!aux.isEmpty()) {
-					fila.enqueue(aux.dequeue());
+					queue.enqueue(aux.dequeue());
 				}
 
 			} catch (QueueOverflowException | QueueUnderflowException e) {
@@ -52,9 +52,9 @@ public class StackWithTwoQueue<T> implements Stack<T> {
 	@Override
 	public T pop() throws StackUnderflowException {
 		if (!isEmpty()) {
-			T element = fila.head();
+			T element = queue.head();
 			try {
-				fila.dequeue();
+				queue.dequeue();
 			} catch (QueueUnderflowException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -70,19 +70,19 @@ public class StackWithTwoQueue<T> implements Stack<T> {
 	public T top() {
 		T top = null;
 		if (!isEmpty()) {
-			top = fila.head();
+			top = queue.head();
 		}
 		return top;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return this.fila.isEmpty();
+		return this.queue.isEmpty();
 	}
 
 	@Override
 	public boolean isFull() {
-		return this.fila.isFull();
+		return this.queue.isFull();
 	}
 
 }

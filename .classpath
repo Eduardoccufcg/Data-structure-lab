@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="Router06Test"/>
-	<classpathentry kind="src" path="Router06"/>
+	<classpathentry kind="src" path="Route06Test"/>
+	<classpathentry kind="src" path="Route06"/>
 	<classpathentry kind="src" path="Sorting algorithms"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
