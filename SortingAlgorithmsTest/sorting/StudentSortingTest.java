@@ -7,16 +7,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import recursive.sorting.BubbleSortRecursive;
+import recursive.sorting.InsertionSortRecursive;
+import recursive.sorting.SelectionSortRecursive;
 import sorting.AbstractSorting;
 import sorting.variations.Bubblesort;
 import sorting.variations.CocktailSort;
 import sorting.variations.CombSort;
 import sorting.variations.CountingSort;
+import sorting.variations.CountingSortPositive;
 import sorting.variations.GnomeSort;
 import sorting.variations.InsertionSort;
 import sorting.variations.OddevenSort;
 import sorting.variations.QuickSort;
 import sorting.variations.SelectionSort;
+import sorting.variations.StoogeSort;
 
 public class StudentSortingTest {
 
@@ -87,7 +92,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = null;
+		this.implementation = new InsertionSortRecursive<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
