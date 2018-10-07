@@ -1,11 +1,25 @@
 package adt.linkedList;
 
+import java.util.Arrays;
+
 public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	protected SingleLinkedListNode<T> head;
 
 	public SingleLinkedListImpl() {
 		this.head = new SingleLinkedListNode<T>();
+	}
+
+	public static void main(String[] args) {
+		SingleLinkedListImpl<Integer> lista = new SingleLinkedListImpl<Integer>();
+		lista.insertOrdenado(58);
+		lista.insertOrdenado(56);
+		lista.insertOrdenado(78);
+		lista.insertOrdenado(79);
+		lista.insertOrdenado(60);
+		lista.insertOrdenado(90);
+		System.out.println(Arrays.toString(lista.toArray()));
+
 	}
 
 	@Override
@@ -58,7 +72,37 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 				head = newHead;
 			} else {
 				// procuro o elemento em que seu proximo e NIL.
+
 				while (!auxHead.next.isNIL()) {
+					auxHead = auxHead.next;
+				}
+				// elementos --> elemento inserido ----> NIL.
+				newNode = new SingleLinkedListNode<>(element, auxHead.next);
+				auxHead.next = newNode;
+			}
+
+		}
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public void insertOrdenado(T element) {
+		if (element != null) {
+
+			SingleLinkedListNode<T> auxHead, newHead, newNode;
+			// Faco uma copia do head
+			auxHead = head;
+			newNode = new SingleLinkedListNode<>(element,  new SingleLinkedListNode<T>());
+			if (isEmpty() || (newNode).compareTo(auxHead.getData()) > 0 ) {
+				// crio um elemento e seu proximo vai ser o head atual
+				newHead = new SingleLinkedListNode<T>(element, head);
+				// o head aponta agora para o elemento inserido
+				head = newHead;
+			} else {
+				// procuro o elemento em que seu proximo e NIL.
+				
+				while (!auxHead.next.isNIL() && !((newNode).compareTo(auxHead.next.getData()) > 0) 
+						) {
 					auxHead = auxHead.next;
 				}
 				// elementos --> elemento inserido ----> NIL.
