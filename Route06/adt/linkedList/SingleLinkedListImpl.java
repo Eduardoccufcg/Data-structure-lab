@@ -12,13 +12,40 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	public static void main(String[] args) {
 		SingleLinkedListImpl<Integer> lista = new SingleLinkedListImpl<Integer>();
-		lista.insertOrdenado(58);
-		lista.insertOrdenado(56);
-		lista.insertOrdenado(78);
-		lista.insertOrdenado(79);
-		lista.insertOrdenado(60);
-		lista.insertOrdenado(90);
+
+		lista.insertFirst(10);
+
+		lista.insertFirst(20);
+		lista.removeFirst();
 		System.out.println(Arrays.toString(lista.toArray()));
+		
+		System.out.println(Arrays.toString(lista.toArray()));
+
+	}
+
+	private void reverseElem(SingleLinkedListNode<T> elem, SingleLinkedListNode<T> prev) {
+
+		if (!elem.next.isNIL()) {
+			reverseElem(elem.getNext(), elem);
+		}
+		elem.setNext(prev);
+
+	}
+
+	public void inverter() {
+		// procuro o ultimo elemento da lista.
+		SingleLinkedListNode<T> aux = this.head;
+		SingleLinkedListNode<T> previous = new SingleLinkedListNode<T>();
+		while (!aux.isNIL()) {
+			previous = aux;
+			aux = aux.next;
+		}
+
+		// troco os apontadores de proximo de cada elemento recursivamente.
+		reverseElem(this.head, new SingleLinkedListNode<T>());
+		// O head agora é p ultimoelemento da lista, ou seja o primeiro da lista
+		// invertida.
+		this.head = previous;
 
 	}
 
@@ -57,6 +84,28 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	}
 
+	public void insertFirst(T element) {
+		if (element != null) {
+
+			SingleLinkedListNode<T> newHead;
+			// Faco uma copia do head
+			// se a lista esta vazia entao (Head)Elemento --> NIl
+
+			// crio um elemento e seu proximo vai ser o head atual
+			newHead = new SingleLinkedListNode<T>(element, head);
+			// o head aponta agora para o elemento inserido
+			head = newHead;
+		}
+
+	}
+
+	public void removeFirst() {
+		if (!isEmpty()) {
+			head = head.next;
+
+		}
+	}
+
 	@Override
 	public void insert(T element) {
 		if (element != null) {
@@ -92,17 +141,16 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 			SingleLinkedListNode<T> auxHead, newHead, newNode;
 			// Faco uma copia do head
 			auxHead = head;
-			newNode = new SingleLinkedListNode<>(element,  new SingleLinkedListNode<T>());
-			if (isEmpty() || (newNode).compareTo(auxHead.getData()) > 0 ) {
+			newNode = new SingleLinkedListNode<>(element, new SingleLinkedListNode<T>());
+			if (isEmpty() || (newNode).compareTo(auxHead.getData()) > 0) {
 				// crio um elemento e seu proximo vai ser o head atual
 				newHead = new SingleLinkedListNode<T>(element, head);
 				// o head aponta agora para o elemento inserido
 				head = newHead;
 			} else {
 				// procuro o elemento em que seu proximo e NIL.
-				
-				while (!auxHead.next.isNIL() && !((newNode).compareTo(auxHead.next.getData()) > 0) 
-						) {
+
+				while (!auxHead.next.isNIL() && !((newNode).compareTo(auxHead.next.getData()) > 0)) {
 					auxHead = auxHead.next;
 				}
 				// elementos --> elemento inserido ----> NIL.
