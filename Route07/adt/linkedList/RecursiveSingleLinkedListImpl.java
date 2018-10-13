@@ -17,7 +17,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 		lista.insert(8888);
 		lista.insert(4);
 		lista.insert(1);
-		lista.insert(-55);
+		
 		System.out.println(Arrays.toString(lista.toArray()));
 		lista.reverse();
 
