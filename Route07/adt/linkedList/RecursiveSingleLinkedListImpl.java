@@ -14,12 +14,26 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 	public static void main(String[] args) {
 		RecursiveSingleLinkedListImpl<Integer> lista = new RecursiveSingleLinkedListImpl<Integer>();
 		lista.insert(10);
-		lista.insert(6);
 		lista.insert(8888);
-	
-		
-		System.out.println((lista.maior().getData()));
+		lista.insert(4);
+		lista.insert(1);
+		lista.insert(-55);
+		System.out.println(Arrays.toString(lista.toArray()));
+		lista.reverse();
 
+		System.out.println(Arrays.toString(lista.toArray()));
+
+	}
+
+	public void reverse() {
+		if (this.isEmpty()) {
+
+		} else {
+			T data = this.data;
+			this.remove(data);
+			this.reverse();
+			this.insert(data);
+		}
 
 	}
 
@@ -126,7 +140,6 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 
 	public RecursiveSingleLinkedListImpl<T> maior() {
 		RecursiveSingleLinkedListImpl<T> maior = this;
-		
 
 		if (this.next != null && !this.next.isEmpty()) {
 			maior = this;
@@ -134,7 +147,6 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 			System.out.println(maior.getData());
 			System.out.println(outroMaior.getData());
 			maior = max(maior, outroMaior);
-			
 
 		}
 		return maior;
@@ -155,12 +167,12 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 	@SuppressWarnings("unchecked")
 	@Override
 	public int compareTo(Object o) {
-		
+
 		if ((Integer) ((RecursiveSingleLinkedListImpl<T>) o).getData() < (Integer) this.getData()) {
 			return 1;
-		}else if ( (Integer) ((RecursiveSingleLinkedListImpl<T>) o).getData() > (Integer) this.getData()) {
+		} else if ((Integer) ((RecursiveSingleLinkedListImpl<T>) o).getData() > (Integer) this.getData()) {
 			return -1;
-		}else {
+		} else {
 			return 0;
 		}
 	}
