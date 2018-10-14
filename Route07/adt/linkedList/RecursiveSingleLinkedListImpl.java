@@ -17,11 +17,15 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 		lista.insert(8888);
 		lista.insert(4);
 		lista.insert(1);
-		
-		System.out.println(Arrays.toString(lista.toArray()));
-		lista.reverse();
 
 		System.out.println(Arrays.toString(lista.toArray()));
+		lista.swap(10, 1);
+
+		System.out.println(Arrays.toString(lista.toArray()));
+
+	}
+
+	public void swap(T elem1, T elem2) {
 
 	}
 
@@ -44,12 +48,10 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T>, Comparab
 
 	@Override
 	public boolean isEmpty() {
-		boolean isEmpty = false;
-		if (data == null) {
-			isEmpty = true;
-		}
-		return isEmpty;
-
+	
+		return (data == null);
+			
+		
 	}
 
 	@Override

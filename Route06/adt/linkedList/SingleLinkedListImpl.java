@@ -12,14 +12,64 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	public static void main(String[] args) {
 		SingleLinkedListImpl<Integer> lista = new SingleLinkedListImpl<Integer>();
+		lista.insert(10);
+		lista.insert(8888);
+		lista.insert(4);
+		lista.insert(1);
 
-		lista.insertFirst(10);
+		System.out.println(Arrays.toString(lista.toArray()));
+		System.out.println(lista.elementFromTheEnd(5));
 
-		lista.insertFirst(20);
-		lista.removeFirst();
-		System.out.println(Arrays.toString(lista.toArray()));
-		
-		System.out.println(Arrays.toString(lista.toArray()));
+	}
+
+	public void swap(T elem1, T elem2) {
+		SingleLinkedListNode<T> e1 = null;
+		SingleLinkedListNode<T> e2 = null;
+		SingleLinkedListNode<T> aux = this.head;
+
+		while (!aux.isNIL()) {
+			if (aux.getData().equals(elem1)) {
+				e1 = aux;
+
+			} else if (aux.getData().equals(elem2)) {
+				e2 = aux;
+
+			}
+			aux = aux.getNext();
+
+		}
+
+		if (e1 != null && e2 != null) {
+
+			e1.setData(elem2);
+			e2.setData(elem1);
+
+		}
+	}
+
+	public T elementFromTheEnd(int k) {
+
+		SingleLinkedListNode<T> aux = this.head;
+		int j = 0;
+		while (!aux.isNIL() && j < k) {
+
+			aux = aux.getNext();
+			j++;
+
+		}
+		SingleLinkedListNode<T> kth = this.head;
+		while (!aux.isNIL()) {
+
+			aux = aux.getNext();
+			kth = kth.getNext();
+			j++;
+
+		}
+		// k > que o tamanho do array.
+		if(k > j) {
+			return null;
+		}
+		return kth.getData();
 
 	}
 
