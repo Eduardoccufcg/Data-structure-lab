@@ -7,6 +7,8 @@
 	<classpathentry kind="src" path="Search Algorithms"/>
 	<classpathentry kind="src" path="Route07"/>
 	<classpathentry kind="src" path="Route07test"/>
+	<classpathentry kind="src" path="Route05"/>
+	<classpathentry kind="src" path="Route05test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="src" path="SortingAlgorithmsTest"/>
