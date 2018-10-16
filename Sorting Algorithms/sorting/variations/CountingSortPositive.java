@@ -35,6 +35,12 @@ public class CountingSortPositive extends AbstractSorting<Integer> {
 			saida[contador[array[j]]-- - 1] = array[j];
 
 		}
+		// copia pro array.
+				int indice = 0;
+				for (int i = leftIndex; i <= rightIndex; i++) {
+					array[i] = saida[indice];
+					indice++;
+				}
 
 	}
 

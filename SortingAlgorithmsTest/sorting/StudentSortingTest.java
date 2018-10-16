@@ -92,7 +92,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = new InsertionSortRecursive<Integer>();
+		this.implementation = new CountingSort();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
