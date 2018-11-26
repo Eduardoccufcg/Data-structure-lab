@@ -17,6 +17,7 @@ import sorting.variations.CombSort;
 import sorting.variations.CountingSort;
 import sorting.variations.CountingSortPositive;
 import sorting.variations.GnomeSort;
+import sorting.variations.HeapSort;
 import sorting.variations.InsertionSort;
 import sorting.variations.OddevenSort;
 import sorting.variations.QuickSort;
@@ -92,7 +93,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = new BubbleSortRecursive<Integer>();
+		this.implementation = new HeapSort<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
