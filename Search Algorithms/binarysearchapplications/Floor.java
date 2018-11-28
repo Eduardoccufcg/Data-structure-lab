@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Floor {
 	
 	public static void main(String[] args) {
-		System.out.println(floor(new Integer[] {1,2,3,4,5,6,7,8,9},5));
+		System.out.println(floor(new Integer[] {1,2,3,4,5,6,7,8,9},0));
 	}
 	
 	
@@ -16,7 +16,7 @@ public class Floor {
 	
 		
 	}
-	public static int floor(Integer[] array,Integer x) {
+	public static Integer floor(Integer[] array,Integer x) {
 		Arrays.sort(array);
 		return floor(array,x,0,array.length-1);
 	}

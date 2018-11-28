@@ -13,7 +13,7 @@ public class Ceil {
 
 	}
 
-	public static int ceil(Integer[] array, Integer x) {
+	public static Integer ceil(Integer[] array, Integer x) {
 		Arrays.sort(array);
 		return ceil(array, x, 0, array.length - 1);
 	}
