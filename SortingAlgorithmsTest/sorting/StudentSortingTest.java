@@ -11,6 +11,8 @@ import recursive.sorting.BubbleSortRecursive;
 import recursive.sorting.InsertionSortRecursive;
 import recursive.sorting.SelectionSortRecursive;
 import sorting.AbstractSorting;
+import sorting.variations.BilateralSelectionSort;
+import sorting.variations.BinaryInsertionSort;
 import sorting.variations.Bubblesort;
 import sorting.variations.CocktailSort;
 import sorting.variations.CombSort;
@@ -93,7 +95,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = new HeapSort<Integer>();
+		this.implementation = new BilateralSelectionSort<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
