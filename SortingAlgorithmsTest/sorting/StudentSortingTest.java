@@ -21,10 +21,16 @@ import sorting.variations.CountingSortPositive;
 import sorting.variations.GnomeSort;
 import sorting.variations.HeapSort;
 import sorting.variations.InsertionSort;
+import sorting.variations.MergeSort;
 import sorting.variations.OddevenSort;
 import sorting.variations.QuickSort;
+import sorting.variations.QuickSortAleatorizado;
+import sorting.variations.QuickSortCormen;
+import sorting.variations.QuickSortHoare;
+import sorting.variations.QuickSortMedianaTres;
 import sorting.variations.SelectionSort;
 import sorting.variations.StoogeSort;
+import sorting.variations.ThreeWayQuickSort;
 
 public class StudentSortingTest {
 
@@ -95,7 +101,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = new BilateralSelectionSort<Integer>();
+		this.implementation = new ThreeWayQuickSort<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
