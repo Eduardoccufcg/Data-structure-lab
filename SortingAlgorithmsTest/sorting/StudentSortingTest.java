@@ -13,6 +13,7 @@ import recursive.sorting.SelectionSortRecursive;
 import sorting.AbstractSorting;
 import sorting.variations.BilateralSelectionSort;
 import sorting.variations.BinaryInsertionSort;
+import sorting.variations.BubbleSortMelhorado;
 import sorting.variations.Bubblesort;
 import sorting.variations.CocktailSort;
 import sorting.variations.CombSort;
@@ -29,6 +30,7 @@ import sorting.variations.QuickSortCormen;
 import sorting.variations.QuickSortHoare;
 import sorting.variations.QuickSortMedianaTres;
 import sorting.variations.SelectionSort;
+import sorting.variations.SlowSort;
 import sorting.variations.StoogeSort;
 import sorting.variations.ThreeWayQuickSort;
 
@@ -101,7 +103,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 
-		this.implementation = new ThreeWayQuickSort<Integer>();
+		this.implementation = new SlowSort<Integer>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {

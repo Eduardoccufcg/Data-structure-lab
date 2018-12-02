@@ -42,6 +42,7 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 		// Initial index of merged subarry array
 		int k = left;
+		
 		while (i < n1 && j < n2) {
 			if (L[i].compareTo(R[j]) <= 0) {
 				array[k] = L[i];

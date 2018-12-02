@@ -2,14 +2,14 @@ package binarysearch;
 
 import java.util.Arrays;
 
-public class BinarySearch {
+public class BinarySearchRecursive {
 
-	public BinarySearch() {
+	public BinarySearchRecursive() {
 
 	}
 
 	public static void main(String[] args) {
-		BinarySearch a = new BinarySearch();
+		BinarySearchRecursive a = new BinarySearchRecursive();
 		Integer[] b = new Integer[] { 1, 5, 8, 9, 3, 2 };
 		Arrays.sort(b);
 		System.out.println(a.buscaBinaria(5, b, 0, b.length - 1));
