@@ -3,6 +3,7 @@ package sorting.variations;
 import sorting.AbstractSorting;
 import util.Util;
 
+// Versao do bubblesort, tambem chamado de bubblesort simultaneo.
 public class CocktailSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override

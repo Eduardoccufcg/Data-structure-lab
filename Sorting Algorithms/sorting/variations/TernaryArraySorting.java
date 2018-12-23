@@ -24,14 +24,17 @@ public class TernaryArraySorting {
 				menor = r[i];
 
 		}
-		int i = 0, iMenor = 0;
-		int iMaior = r.length - 1;
-		while (i <= iMaior) {
+		int i = 0, lt = 0;
+		int gt = r.length - 1;
+		while (i <= gt) {
 
+			// menor que o pivot
 			if (r[i] == menor)
-				Util.swap(r, iMenor++, i++);
+				Util.swap(r, lt++, i++);
+			// maior que o pivot
 			else if (r[i] == maior)
-				Util.swap(r, i, iMaior--);
+				Util.swap(r, i, gt--);
+			// igual ao pivot
 			else
 				i++;
 

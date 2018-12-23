@@ -17,8 +17,10 @@ public class ThreeWayQuickSort<T extends Comparable<T>> extends AbstractSorting<
 			while (i <= gt) {
 				int cmp = array[i].compareTo(pivot);
 				if (cmp > 0) {
+					// array[i] > pivot
 					Util.swap(array, i, gt--);
 				} else if (cmp < 0) {
+					// array[i] < pivot
 					Util.swap(array, i++, lt++);
 				} else {
 					i++;

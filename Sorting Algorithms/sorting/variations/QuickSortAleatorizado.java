@@ -23,13 +23,14 @@ public class QuickSortAleatorizado<T extends Comparable<T>> extends AbstractSort
 		Random rnd = new Random();
 		int randomIndex = rnd.nextInt(rightIndex - leftIndex + 1) + leftIndex;
 		Util.swap(array, randomIndex, rightIndex);
+		// ***** PARTICIONAMENTO DE CORMEN ****
 		T pivot = array[rightIndex];
+
 		int i = leftIndex - 1;
 		int j = leftIndex;
 		while (j < rightIndex) {
 			if (array[j].compareTo(pivot) <= 0) {
-				i++;
-				Util.swap(array, i, j);
+				Util.swap(array, ++i, j);
 			}
 			j++;
 

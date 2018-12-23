@@ -9,7 +9,7 @@ public class CountingSortPositive extends AbstractSorting<Integer> {
 		int max = max(array, leftIndex, rightIndex);
 
 		Integer[] contador = new Integer[max + 1];
-		Integer[] saida = new Integer[array.length];
+		Integer[] saida = new Integer[rightIndex - leftIndex + 1];
 
 		// 1ª - (Inicializar com zero)
 		for (int i = 0; i < contador.length; i++) {
@@ -36,11 +36,11 @@ public class CountingSortPositive extends AbstractSorting<Integer> {
 
 		}
 		// copia pro array.
-				int indice = 0;
-				for (int i = leftIndex; i <= rightIndex; i++) {
-					array[i] = saida[indice];
-					indice++;
-				}
+		int indice = 0;
+		for (int i = leftIndex; i <= rightIndex; i++) {
+			array[i] = saida[indice];
+			indice++;
+		}
 
 	}
 

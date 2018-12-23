@@ -5,12 +5,16 @@ import sorting.AbstractSorting;
 public class CountingSort extends AbstractSorting<Integer> {
 
 	public void sort(Integer[] array, int leftIndex, int rightIndex) {
-		
+
 		Integer maior = maior(array, leftIndex, rightIndex);
 		Integer menor = menor(array, leftIndex, rightIndex);
-		int[] contador = new int[maior - menor + 1];
+		Integer[] contador = new Integer[maior - menor + 1];
 
-		int[] resposta = new int[rightIndex - leftIndex + 1];
+		Integer[] resposta = new Integer[rightIndex - leftIndex + 1];
+
+		for (int k = 0; k < contador.length; k++) {
+			contador[k] = 0;
+		}
 
 		// contar.
 

@@ -67,8 +67,8 @@ public class QuickSortMedianaTres<T extends Comparable<T>> extends AbstractSorti
 		int j = leftIndex;
 		while (j < rightIndex) {
 			if (array[j].compareTo(pivot) <= 0) {
-				i++;
-				Util.swap(array, i, j);
+				
+				Util.swap(array, ++i, j);
 			}
 			j++;
 

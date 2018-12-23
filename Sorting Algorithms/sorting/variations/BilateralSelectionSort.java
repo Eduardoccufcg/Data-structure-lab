@@ -10,7 +10,7 @@ public class BilateralSelectionSort<T extends Comparable<T>> extends AbstractSor
 
 		while (leftIndex < rightIndex) {
 
-			// Coloca o menor elemento na k-ésima posiçao
+			// "k" a posicao onde o elemento deve ficar. 
 
 			int minIndex = leftIndex, k = leftIndex;
 			// seleciona o elemento minimo
@@ -21,12 +21,12 @@ public class BilateralSelectionSort<T extends Comparable<T>> extends AbstractSor
 				}
 
 			}
-			// Coloca o elemenro mínimo na k-ésima posição
+			// Coloca o elemento mínimo na k-ésima posição
 			Util.swap(array, minIndex, k);
 
 			leftIndex++;
 
-			// Coloca o maior elemento na k-ésima posiçao
+			// "l" a posicao onde o elemento deve ficar. 
 
 			int maxIndex = rightIndex, l = rightIndex;
 

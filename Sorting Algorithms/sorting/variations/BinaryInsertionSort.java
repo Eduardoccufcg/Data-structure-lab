@@ -5,21 +5,24 @@ import sorting.AbstractSorting;
 public class BinaryInsertionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	public int buscaBinaria(T num, T[] array, int left, int right) {
-		int indice;
-		if (right <= left) {
-			indice = (num.compareTo(array[left]) > 0) ? (left + 1) : left;
+
+		// nao encontrei a posicao ou seja a posicao sera left ou depois dele.
+		int indice = (num.compareTo(array[left]) > 0) ? (left + 1) : left;
+
+		if (left < right) {
+			int mid = (left + right) / 2;
+
+			if (num.compareTo(array[mid]) == 0)
+				indice =  mid + 1;
+
+			if (num.compareTo(array[mid]) > 0) {
+				indice =  buscaBinaria(num, array, mid + 1, right);
+			} else {
+				indice = buscaBinaria(num, array, left, mid - 1);
+
+			}
 		}
-		int mid = (left + right) / 2;
-
-		if (num.compareTo(array[mid]) == 0)
-			indice = mid + 1;
-
-		if (num.compareTo(array[mid]) > 0) {
-			indice = buscaBinaria(num, array, mid + 1, right);
-		} else {
-			indice =  buscaBinaria(num, array, left, mid - 1);
-
-		}
+		
 		return indice;
 
 	}

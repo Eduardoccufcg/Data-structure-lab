@@ -9,21 +9,26 @@ public class KLargestOrderStatisticsImpl<T extends Comparable<T>> {
 	public static void main(String[] args) {
 		KLargestOrderStatisticsImpl<Integer> s = new KLargestOrderStatisticsImpl<Integer>();
 		Integer[] array = new Integer[] { 7, 3, 9, 1, 5, 8, 2, 4, 10, 6 };
-		System.out.println(Arrays.toString(s.getKLargest(array, 3)));
+		System.out.println(Arrays.toString(s.getKLargest(array, 1)));
 	}
 
 	/*
 	 * Retorna um array contendo os k maiores elementos.
 	 */
 	public T[] getKLargest(T[] array, int k) {
+		T[] output = null;
 
-		T[] arr = (T[]) new Comparable[k];
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = orderStatistics(array, array.length - k + 1);
-			k--;
+		if (k <= array.length) {
+			T[] arr = (T[]) new Comparable[k];
+			for (int i = 0; i < arr.length; i++) {
+				arr[i] = orderStatistics(array, array.length - k + 1);
+				k--;
 
+			}
+			output = arr;
 		}
-		return arr;
+
+		return output;
 
 	}
 
